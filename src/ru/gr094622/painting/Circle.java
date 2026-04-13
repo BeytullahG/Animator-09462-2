@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class Circle extends AbstractGeometryObject implements Paintable {
 
-    public Circle(int x, int y, Dimension size, Color color, int xSpeed, int ySpeed) {
-        super(x, y, size, color, xSpeed, ySpeed);
+    public Circle(int x, int y, Dimension size, Color color) {
+        super(x, y, size, color);
     }
 
     @Override

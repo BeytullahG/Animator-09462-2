@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class Rect extends AbstractGeometryObject {
 
-    public Rect(int x, int y, Dimension size, Color color, int xSpeed, int ySpeed) {
-        super(x, y, size, color, xSpeed, ySpeed);
+    public Rect(int x, int y, Dimension size, Color color) {
+        super(x, y, size, color);
     }
 
     @Override

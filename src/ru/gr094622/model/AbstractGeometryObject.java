@@ -1,8 +1,11 @@
 package ru.gr094622.model;
 
 import java.awt.*;
+import java.util.Random;
 
 public abstract class AbstractGeometryObject implements GeometryObject {
+
+    private static final Random RANDOM = new Random();
 
     private int x;
     private int y;
@@ -11,13 +14,18 @@ public abstract class AbstractGeometryObject implements GeometryObject {
     private int xSpeed;
     private int ySpeed;
 
-    public AbstractGeometryObject(int x, int y, Dimension size, Color color, int xSpeed, int ySpeed) {
+    public AbstractGeometryObject(int x, int y, Dimension size, Color color) {
         this.x = x;
         this.y = y;
         this.size = size;
         this.color = color;
-        this.xSpeed = xSpeed;
-        this.ySpeed = ySpeed;
+        this.xSpeed = randomSpeed();
+        this.ySpeed = randomSpeed();
+    }
+
+    private static int randomSpeed() {
+        int speed = RANDOM.nextInt(5) + 1;
+        return RANDOM.nextBoolean() ? speed : -speed;
     }
 
     @Override
